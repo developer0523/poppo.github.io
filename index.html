@@ -9,17 +9,57 @@ t.AF.id=t.AF.id||i,t.AF.plugins={},o=e.createElement(n),p=e.getElementsByTagName
 o.src="https://websdk.appsflyer.com?"+(c.length>0?"st="+c.split(",").sort().join(",")+"&":"")+(i.length>0?"af_id="+i:""),
 p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","pba","24b0177b-afd7-42a5-84a2-3bc9d179b995")
 </script>
+   <script>
+        window.onload = function () {
+            document.getElementById('checkout').addEventListener('click', function () {
+                AF('pba', 'event', {eventType: 'EVENT',eventCategory: 'conversion', eventName: 'purchase_online'});
+            });
+        }
+     // using the fetch api to send the user email to the server
+        // and get the unique user id in return	
+        window.onload = function () {
+            var userEmail = localStorage.getItem('user_email');
+            fetch('users/' + userEmail).then(function (res) {
+                   res.text().then(function (id) {
+                    console.log(id);
+                    AF('pba', 'event', { eventType: 'IDENTIFY', customUserId: id});
+                });
+            });
+        } 
+
+    </script>
+  
+  
+  
+  
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <title>AF Test</title>
-  <LINK href="styles.css" rel="stylesheet" type="text/css">
+   
 </head>
 
 <body> 
  <p>
-  Read Me
-</p>
+      <ul>
+            <li>Color: Blue</li>
+            <li>Quantity: 2</li>
+            <li>Price: $20</li>
+        </ul>
+      <ul><button id='checkout'>Checkout</button></ul>
+ </p>
 <p>
-  AF Web Application -  PBA
+  User Information Acquisition
+  <body>
+    <h1>Sign Up</h1>
+    <form onsubmit="storeUserEmail()" action="/signup" method="post">
+        <div><label>Name</label>
+            <input type="text" name="name" id="name"></div>
+        <br />
+        <div> <label>Email</label>
+            <input type="email" name="email" id="email"></div>
+        <br />
+        <input type="submit" id="submit">
+    </form>
+</body>
 </p>
 
 </body>
