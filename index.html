@@ -26,7 +26,7 @@ p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","pba","24b0177b-
             fetch('users/' + userEmail).then(function (res) {
                    res.text().then(function (id) {
                     console.log(id);
-                    AF('pba', 'event', { eventType: 'IDENTIFY', customUserId: id});
+                    AF('pba', 'event', { eventType: 'IDENTIFY', customUserId: 'static cuid'});
                 });
             });
         }
