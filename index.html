@@ -17,6 +17,7 @@ p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","pba","24b0177b-
         window.onload = function () {
             document.getElementById('checkout').addEventListener('click', function () {
                 AF('pba', 'event', {eventType: 'EVENT',eventCategory: 'conversion', eventName: 'purchase_online'});
+                document.getElementById("demo").innerHTML = "YOU CLICKED ME!"
             });
         }
      // using the fetch api to send the user email to the server
@@ -50,6 +51,7 @@ p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","pba","24b0177b-
             <li>Price: $20</li>
         </ul>
       <ul><button id='checkout'>Checkout</button></ul>
+      <ul id='demo'></ul>
  </p>
 <p>
   User Information Acquisition
