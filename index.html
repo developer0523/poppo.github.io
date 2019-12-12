@@ -15,8 +15,9 @@ p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","pba","24b0177b-
             localStorage.setItem('user_email', userEmail);
              
         window.onload = function () {
+            AF('pba', 'event', {eventType: 'EVENT',eventCategory: 'conversion', eventName: 'onload'});
             document.getElementById('checkout').addEventListener('click', function () {
-                AF('pba', 'event', {eventType: 'EVENT',eventCategory: 'conversion', eventName: 'purchase_online'});
+                AF('pba', 'event', {eventType: 'EVENT',eventName: 'purchase_online'});
                 document.getElementById("demo").innerHTML = "YOU CLICKED ME!"
             });
         }
