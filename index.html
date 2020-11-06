@@ -16,18 +16,20 @@ t.AF.id=t.AF.id||i,t.AF.plugins={},o=e.createElement(n),p=e.getElementsByTagName
 o.src="https://websdk.appsflyer.com?"+(c.length>0?"st="+c.split(",").sort().join(",")+"&":"")+(i.length>0?"af_id="+i:""),
 p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","pba","24b0177b-afd7-42a5-84a2-3bc9d179b995")
 </script>
-  <script>
+<script src="/layui/layui.js"></script>
+<script>
+<script>
 
        
              
-        window.onload = function () {
-            AF('pba', 'event', {eventType: 'EVENT',eventCategory: 'conversion', eventName: 'onload'});
-            document.getElementById('checkout').addEventListener('click', function () {
-               document.getElementById("demo").innerHTML = "YOU CLICKED ME!"
-                AF('pba', 'event', {eventType: 'EVENT',eventName: 'purchase_online'});
+        // window.onload = function () {
+        //     AF('pba', 'event', {eventType: 'EVENT',eventCategory: 'conversion', eventName: 'onload'});
+        //     document.getElementById('checkout').addEventListener('click', function () {
+        //        document.getElementById("demo").innerHTML = "YOU CLICKED ME!"
+        //         AF('pba', 'event', {eventType: 'EVENT',eventName: 'purchase_online'});
                
-            });
-        }
+        //     });
+        // }
     
    
   
@@ -38,11 +40,16 @@ p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","pba","24b0177b-
   
   
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link rel="stylesheet" href="/layui/css/layui.css">
   <title>AF Test</title>
    
 </head>
 
 <body> 
+<blockquote class="layui-elem-quote">
+  尝试使用Onelink的测试吧
+</blockquote>
+<a class="layui-btn layui-btn-normal" href="https://nbaapp.onelnk.com/mifJ?pid=QQJoy&c=QQJoy&is_retargeting=true&af_inactivity_window=7d&af_click_lookback=7d&af_cost_value=0&af_cost_currency=USD&af_android_url=http%3A%2F%2Fdldir1.qq.com%2Fdlomg%2Fnbaapp%2FNBAAPP_6.8.2_weibogamepostfa1.apk" target="_blank">前去这个onelink</a>  
  <p>
       <ul>
             <li>Color: Blue</li>
@@ -69,13 +76,7 @@ p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","pba","24b0177b-
     </form>
 </body>
 </p>
-<p>
-       
-       <ul>  <input type="button" onclick="location.href='https://nbaapp.onelnk.com/mifJ?pid=QQJoy&c=QQJoy&is_retargeting=true&af_inactivity_window=7d&af_click_lookback=7d&af_cost_value=0&af_cost_currency=USD&af_android_url=http%3A%2F%2Fdldir1.qq.com%2Fdlomg%2Fnbaapp%2FNBAAPP_6.8.2_weibogamepostfa1.apk';" value="ONELINK TEST NBA-longlink"/> </ul>
-       
- </p>
-  <p id="demo">XXXX</p>
-
+ 
 <p>
 </body>
 </html>
