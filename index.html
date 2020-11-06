@@ -48,8 +48,10 @@ p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","pba","24b0177b-
                 <input type="text" name="title" lay-filter='urlinput' required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
               </div>
             </div>
+             <button class="layui-btn" lay-submit lay-filter="formsubmi">跳转这个链接</button>
+
           </form>
-          <a class="layui-btn layui-btn-normal" href="" target="_blank">前去这个onelink</a>  
+          
 
         </p>
       </div>
@@ -106,19 +108,30 @@ p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","pba","24b0177b-
 <script src="layui/layui.all.js" charset="utf-8"></script>
 <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 <script>
-layui.use(['element', 'layer'], function(){
-  var element = layui.element;
-  var layer = layui.layer;
+// layui.use(['element', 'layer'], function(){
+//   var element = layui.element;
+//   var layer = layui.layer;
+   
   
-  //监听折叠
-  element.on('collapse(test)', function(data){
-    layer.msg('展开状态：'+ data.show);
-  });
-}); 
+ 
+  
 
-//监听表单inpu
-form.on('input(urlinput)', function(data){
-  layer.msg('编辑操作');
+
+// }); 
+var realhref;
+layui.use('form', function(){
+  //监听折叠
+  var form = layui.form;
+  
+  form.on('input(urlinput)', function(data){
+    layer.msg('link is:'+ data.value);
+    realhref = data.value;
+  });
+  form.on('submit(formsubmi)', function(data){
+    window.location.href=realhref;
+  });
 });
+
 </script>
 </html>
+ 
