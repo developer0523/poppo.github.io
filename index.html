@@ -51,8 +51,9 @@ p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","pba","24b0177b-
                 >
               </div>
             </div>
-             <button class="layui-btn" lay-submit lay-filter="formsubmi" onclick="window.location.href=document.getElementById('urlholder').value;" >跳转这个链接</button>
-
+            <a href="https://bobwang.onelink.me/nDdZ/e15ae0fb">
+             <button class="layui-btn" lay-submit lay-filter="formsubmi" >跳转这个链接</button>
+            </a> 
           </form>
           
 
@@ -121,19 +122,19 @@ p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","pba","24b0177b-
 //     layer.msg('展开状态：'+ data.show);
 //   });
 // });
-var realhref;
-layui.use('form', function(){
-  //监听折叠
-  var form = layui.form;
+// var realhref;
+// layui.use('form', function(){
+//   //监听折叠
+//   var form = layui.form;
   
-  form.on('input(urlinput)', function(data){
-    layer.msg('link is:'+ data.value);
-    realhref = data.value;
-  });
-  form.on('submit(formsubmi)', function(data){
-    window.location.href=realhref;
-  });
-});
+//   form.on('input(urlinput)', function(data){
+//     layer.msg('link is:'+ data.value);
+//     realhref = data.value;
+//   });
+//   form.on('submit(formsubmi)', function(data){
+//     window.location.href=realhref;
+//   });
+// });
 
 </script>
 </html>
