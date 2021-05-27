@@ -24,6 +24,7 @@ p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","pba","24b0177b-
 t.AF.id=t.AF.id||i,t.AF.plugins={},o=e.createElement(n),p=e.getElementsByTagName(n)[0],o.async=1,
 o.src="https://websdk.appsflyer.com?"+(c.length>0?"st="+c.split(",").sort().join(",")+"&":"")+(i.length>0?"af_id="+i:""),
 p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","pba","24b0177b-afd7-42a5-84a2-3bc9d179b995")
+
 </script>
  
 
@@ -45,10 +46,12 @@ p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","pba","24b0177b-
             <div class="layui-form-item">
               <label class="layui-form-label">输入</label>
               <div class="layui-input-block">
-                <input type="text" name="title" lay-filter='urlinput' required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                <input id="urlholder" type="text" name="title" lay-filter='urlinput' required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"
+                onchange="window.location.href=document.getElementById('urlholder').value;"
+                >
               </div>
             </div>
-             <button class="layui-btn" lay-submit lay-filter="formsubmi">跳转这个链接</button>
+             <button class="layui-btn" lay-submit lay-filter="formsubmi" onclick="window.location.href=document.getElementById('urlholder').value;" >跳转这个链接</button>
 
           </form>
           
@@ -105,21 +108,19 @@ p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","pba","24b0177b-
  
 <p> -->
 </body>
-<!-- <script src="layui/layui.all.js" charset="utf-8"></script> -->
-<script src="layui/layui.js"></script>
+<script src="layui/layui.all.js"></script>
 
 <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 <script>
 // layui.use(['element', 'layer'], function(){
 //   var element = layui.element;
 //   var layer = layui.layer;
-   
   
- 
-  
-
-
-// }); 
+//   //监听折叠
+//   element.on('collapse(test)', function(data){
+//     layer.msg('展开状态：'+ data.show);
+//   });
+// });
 var realhref;
 layui.use('form', function(){
   //监听折叠
