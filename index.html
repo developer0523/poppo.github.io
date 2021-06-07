@@ -27,7 +27,16 @@ p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","pba","24b0177b-
 
 </script>
  
+<script>
+  function fillRequest(){
 
+    var x = document.getElementById("urlholder").value;
+    document.getElementById("href1").innerHTML = x;
+    alert("You are testing with: "+x);
+    window.open(x); 
+  }
+ 
+ </script>
    
 </head>
 
@@ -47,12 +56,14 @@ p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","pba","24b0177b-
               <label class="layui-form-label">输入</label>
               <div class="layui-input-block">
                 <input id="urlholder" type="text" name="title" lay-filter='urlinput' required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"
-                
+                 
+        
                 >
               </div>
             </div>
-            <a href="https://bobwang.onelink.me/nDdZ/e15ae0fb">
-             <button class="layui-btn" lay-submit lay-filter="formsubmi" >跳转这个链接</button>
+            <p id="href1"></p> 
+             <button class="layui-btn" lay-submit lay-filter="formsubmi" id="formsubmi1" onclick="fillRequest()"
+              >跳转这个链接</button>
             </a> 
           </form>
           
@@ -80,62 +91,10 @@ p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","pba","24b0177b-
 
 
  
- <!-- <p>
-      <ul>
-            <li>Color: Blue</li>
-            <li>Quantity: 2</li>
-            <li>Price: $20</li>
-        </ul>
-      <ul><button id='checkout'>Checkout</button></ul>
-       
- </p>
-  <p id="demo">XXXX</p>
-
-<p>
-  User Information Acquisition
-  <body>
-    <h1>Sign Up</h1>
-    <form onsubmit="storeUserEmail()" action="/signup" method="post">
-        <div><label>Name</label>
-            <input type="text" name="name" id="name"></div>
-        <br />
-        <div> <label>Email</label>
-            <input type="email" name="email" id="email"></div>
-        <br />
-        <input type="submit" id="submit">
-    </form>
-</body>
-</p>
  
-<p> -->
 </body>
 <script src="layui/layui.all.js" charset="utf-8"></script>
  
-<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
-<script>
-// layui.use(['element', 'layer'], function(){
-//   var element = layui.element;
-//   var layer = layui.layer;
-  
-//   //监听折叠
-//   element.on('collapse(test)', function(data){
-//     layer.msg('展开状态：'+ data.show);
-//   });
-// });
-// var realhref;
-// layui.use('form', function(){
-//   //监听折叠
-//   var form = layui.form;
-  
-//   form.on('input(urlinput)', function(data){
-//     layer.msg('link is:'+ data.value);
-//     realhref = data.value;
-//   });
-//   form.on('submit(formsubmi)', function(data){
-//     window.location.href=realhref;
-//   });
-// });
 
-</script>
 </html>
  
