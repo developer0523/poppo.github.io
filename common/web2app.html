@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- AppsFlyer web SDK -->
+<html>
+<head>
+  <title>AF Test</title>
+  <meta charset="utf-8">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../layui/css/layui.css"  media="all">
+ 
+</head>
+
+<body> 
+
+   
+  <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+    <legend>Several Scenarios</legend>
+  </fieldset> 
+  <div class="layui-tab">
+    <ul class="layui-tab-title">
+      <li>Google click</li>
+      <li>Basic URL</li>
+
+    </ul>
+    <div class="layui-tab-content" id="appledown">
+      <button class="layui-btn"  disabled='true'
+      >Download from App Store</button>
+      <br><br>
+      <button class="layui-btn" id='gpdown'
+      >Download from Google Play</button>
+    </div>
+  </div>
+
+  <blockquote class="layui-elem-quote" layer-filter>Outgoing URL</blockquote>
+  <blockquote class="layui-elem-quote layui-quote-nm" id='outgingurl'>(Blank)</blockquote>
+
+</body>
+<!-- load script for ss -->
+<script src="../layui/layui.all.js" charset="utf-8"></script>
+<script src="../js/onelink-smart-script.js" charset="utf-8"></script> 
+<script type="text/javascript">
+  window.onload = function(){
+    const onelinkGenerator =  new window.AF.OneLinkUrlGenerator(
+        {oneLinkURL: "https://poppo.onelink.me/xgMR/",
+         pidKeysList: ['af_pid'],
+         campaignKeysList: ['af_c']
+      });
+      const url = onelinkGenerator.generateUrl();
+      onelinkGenerator.setCustomParameter("param1","af_cost_value","1.5");
+      onelinkGenerator.setCustomParameter("param1","af_cost_currency","USD"); 
+      // onelink is generated
+      if (url) {
+            document.getElementById('gpdown').setAttribute('href', url);
+            document.getElementById('appledown').setAttribute('href', 'https://baidu.com');
+            document.getElementById('outgingurl').innerHTML = url;
+      }
+  }
+
+</script>
+</html>
+ 
