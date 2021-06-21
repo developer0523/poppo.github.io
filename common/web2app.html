@@ -36,7 +36,16 @@
   <blockquote class="layui-elem-quote layui-quote-nm" id='outgingurl'>(Blank)</blockquote>
 
 </body>
-<!-- load script for ss -->
+
+<script>
+
+const url = new URL(window.location);
+url.searchParams.set('af_c', 'somewhat');
+url.searchParams.set('af_pid', 'somehow');
+window.history.pushState({}, '', url);
+</script>
+ 
+<!-- load script for onelink smart script -->   
 <script src="../layui/layui.all.js" charset="utf-8"></script>
 <script src="../js/onelink-smart-script.js" charset="utf-8"></script> 
 <script type="text/javascript">
@@ -46,9 +55,11 @@
          pidKeysList: ['af_pid'],
          campaignKeysList: ['af_c']
       });
-      const url = onelinkGenerator.generateUrl();
       onelinkGenerator.setCustomParameter("param1","af_cost_value","1.5");
       onelinkGenerator.setCustomParameter("param1","af_cost_currency","USD"); 
+      const url = onelinkGenerator.generateUrl();
+      
+      alert(url);
       // onelink is generated
       if (url) {
             document.getElementById('gpdown').setAttribute('href', url);
