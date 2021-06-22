@@ -23,12 +23,16 @@
       <li>Basic URL</li>
 
     </ul>
-    <div class="layui-tab-content" id="appledown">
+    <div class="layui-tab-content" id="appledown_father">
+      <!-- <a id = "appledown" href="index.html">
       <button class="layui-btn"  disabled='true'
       >Download from App Store</button>
+      </a> -->
+      
       <br><br>
-      <button class="layui-btn" id='gpdown'
-      >Download from Google Play</button>
+      <a id = "gpdown" href="index.html">
+      <image src="../img/play_store.png"></image>
+    </a>
     </div>
   </div>
 
@@ -63,7 +67,7 @@ window.history.pushState({}, '', url);
       //once the onelink was generated
       if (url) {
             document.getElementById('gpdown').setAttribute('href', url);
-            document.getElementById('appledown').setAttribute('href', url);
+            // document.getElementById('appledown').setAttribute('href', url);
             document.getElementById('outgingurl').innerHTML = url;
       }
   }
