@@ -59,11 +59,11 @@ window.history.pushState({}, '', url);
       onelinkGenerator.setCustomParameter("param1","af_cost_currency","USD"); 
       const url = onelinkGenerator.generateUrl();
       
-      alert(url);
-      // onelink is generated
+      
+      //once the onelink was generated
       if (url) {
             document.getElementById('gpdown').setAttribute('href', url);
-            document.getElementById('appledown').setAttribute('href', 'https://baidu.com');
+            document.getElementById('appledown').setAttribute('href', url);
             document.getElementById('outgingurl').innerHTML = url;
       }
   }
