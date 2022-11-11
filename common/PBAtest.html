@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <!-- Assume that the server returns a response with details about the newly subscribed user -->
+    <!-- Alternatively, you can extract data from localStorage or cookies,
+            in case data was set in either of them during the subscription process
+        -->
+    <script>window.onload = function () {
+            AF('pba', 'event', { eventType: 'EVENT', eventValue: { 'category': 'holiday_promotion', eventValue: { 'label': 'labelwillreplacedbyname' }, eventName: 'onload_conv' , });
+            }
+        
+    </script>
+    <script>
+        
+        const url = new URL(window.location); 
+        url.searchParams.set('af_adset', 'notNone');
+        url.searchParams.set('af_ad', 'pmax');
+        url.searchParams.set('af_pid', 'enjoy');
+        window.history.pushState({}, '', url);    
+    </script>
+</head>
+
+<body>
+    <h1>Thank You for Subscribing to Our Newsletter</h1>
+</body>
+
+</html>
