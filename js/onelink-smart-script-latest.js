@@ -6,16 +6,13 @@
 
 function getObjectKeysAlphabetical(o) {
   var keys = [],
-      key;
-
+    key;
   for (key in o) {
-      if (obj.hasOwnProperty(key)) {
+      if (Object.hasOwnProperty(key)) {
           keys.push(key);
       }
   }
-
-  keys.sort();
-
+  keys.sort(); 
   return keys;
 }
 
