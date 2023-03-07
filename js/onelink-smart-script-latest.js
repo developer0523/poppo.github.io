@@ -5,19 +5,21 @@
 //客定需要将产出的所有parameter，举例，按字母顺序排序； 可以自由实现想要的顺序
 
 function getObjectKeysAlphabetical(o) {
-  var keys = [],
-    key;
-  var fiObjs = [];
+  var sorted = {},
+  key, a = [];
+
   for (key in o) {
       if (o.hasOwnProperty(key)) {
-          keys.push(key);
+          a.push(key);
       }
   }
-  keys.sort(); 
-  for (i in keys) {     
-      fiObjs.push(o[i]);
-    }
-  return fiObjs;
+
+  a.sort();
+
+  for (key = 0; key < a.length; key++) {
+      sorted[a[key]] = o[a[key]];
+  }
+  return sorted;
 }
 
 
