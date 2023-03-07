@@ -6,7 +6,8 @@
 
 function getObjectKeysAlphabetical(o) {
   var keys = [],
-    key,fiObjs;
+    key;
+  var fiObjs = [];
   for (key in o) {
       if (o.hasOwnProperty(key)) {
           keys.push(key);
