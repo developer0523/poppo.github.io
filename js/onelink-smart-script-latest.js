@@ -2,6 +2,25 @@
  * AF Smart Script (Build 2.4.0)
  */
 
+//客定需要将产出的所有parameter，举例，按字母顺序排序； 可以自由实现想要的顺序
+
+function getObjectKeysAlphabetical(o) {
+  var keys = [],
+      key;
+
+  for (key in o) {
+      if (obj.hasOwnProperty(key)) {
+          keys.push(key);
+      }
+  }
+
+  keys.sort();
+
+  return keys;
+}
+
+
+
 function ownKeys(object, enumerableOnly) {
   var keys = Object.keys(object);
 
@@ -104,14 +123,15 @@ var getGoogleClickIdParameters = function getGoogleClickIdParameters(gciKey, cur
 
 var stringifyParameters = function stringifyParameters() {
   var parameters = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var paramStr = Object.keys(parameters).reduce(function (curr, key) {
-    if (parameters[key]) {
-      curr += "&".concat(key, "=").concat(parameters[key]);
+  var orderedParam = getObjectKeysAlphabetical(parameters);
+  var paramStr = Object.keys(orderedParam).reduce(function (curr, key) {  
+    if (orderedParam[key]) {
+      curr += "&".concat(key, "=").concat(orderedParam[key]);
     }
 
     return curr;
   }, '');
-  console.debug('Generated OneLink parameters', paramStr);
+  console.debug('Generated OneLink parameters', orderedParam);
   return paramStr;
 };
 
@@ -157,7 +177,8 @@ var getURLParametersKV = function getURLParametersKV(urlSearch) {
     if (!!kv[0] && !!kv[1]) {
       curr[[kv[0]]] = kv[1];
     }
-
+    //add order of curr
+    curr.sort();
     return curr;
   }, {});
   console.debug('Generated current parameters object', currentURLParams);
