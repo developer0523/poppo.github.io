@@ -177,8 +177,7 @@ var getURLParametersKV = function getURLParametersKV(urlSearch) {
     if (!!kv[0] && !!kv[1]) {
       curr[[kv[0]]] = kv[1];
     }
-    //add order of curr
-    curr.sort();
+ 
     return curr;
   }, {});
   console.debug('Generated current parameters object', currentURLParams);
