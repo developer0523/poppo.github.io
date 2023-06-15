@@ -55,48 +55,57 @@ window.history.pushState({}, '', url);
 
 <script type="text/javascript">
     var oneLinkURL = "https://onelink-sim.onelink.me/GrbZ";
-    var mediaSource = {
-        keys: ["utm_source"],
-        defaultValue: "ua_misc"
-    };
-    var campaign = {
-        keys: ["utm_campaign"],
-        defaultValue: "ua_misc"
-    };
-    var adSet = {
-        keys: ["utm_content"],
-        defaultValue: "ua_misc"
-    };
-    var ad = {
-        keys: ["utm_term"],
-        defaultValue: "ua_misc"
-    };
-    var afSub5 = {
-        keys: ["fbclid", "gclid", "msclkid", "afsub5", "twclid"]
-    };
-    var afSub1 = {
-        keys: ["z_afsub1"],
-        defaultValue: "mysub1"
-    };
+    const mediaSource = { keys: ['utm_source'], defaultValue: 'organic_web' };
+      const campaign = { keys: ['utm_campaign'] };
+      const adSet = { keys: ['utm_adset'] };
+      const ad = { keys: ['utm_ad'] };
+      const af_xplatform_vt_lookback = {
+        paramKey: 'af_xplatform_vt_lookback',
+        defaultValue: '12h'
+      };
     
-    var afSub2 = {
-        keys: ["y_afsub2"],
-        defaultValue: "mysub2"
-    };
+    // var mediaSource = {
+    //     keys: ["utm_source"],
+    //     defaultValue: "ua_misc"
+    // };
+    // var campaign = {
+    //     keys: ["utm_campaign"],
+    //     defaultValue: "ua_misc"
+    // };
+    // var adSet = {
+    //     keys: ["utm_content"],
+    //     defaultValue: "ua_misc"
+    // };
+    // var ad = {
+    //     keys: ["utm_term"],
+    //     defaultValue: "ua_misc"
+    // };
+    // var afSub5 = {
+    //     keys: ["fbclid", "gclid", "msclkid", "afsub5", "twclid"]
+    // };
+    // var afSub1 = {
+    //     keys: ["z_afsub1"],
+    //     defaultValue: "mysub1"
+    // };
     
-    var afSub3 = {
-        keys: ["x_afsub3"],
-        defaultValue: "mysub3"
-    };
-    var afSub4 = {
-        keys: ["w_afsub4"],
-        defaultValue: "mysub4"
-    };
-    var referrer = {
-        paramKey: "f_referrer",
-        keys: ["f_referrer"],
-        defaultValue: "utm_source%3Dua_misc%26utm_term%3Dua_misc%26utm_content%3Dua_misc%26utm_campaign%3Dua_misc%26utm_medium%3Dua_misc"
-    };
+    // var afSub2 = {
+    //     keys: ["y_afsub2"],
+    //     defaultValue: "mysub2"
+    // };
+    
+    // var afSub3 = {
+    //     keys: ["x_afsub3"],
+    //     defaultValue: "mysub3"
+    // };
+    // var afSub4 = {
+    //     keys: ["w_afsub4"],
+    //     defaultValue: "mysub4"
+    // };
+
+    // const af_xplatform_vt_lookback = {
+    //     paramKey: 'af_xplatform_vt_lookback',
+    //     defaultValue: '12h'
+    //   };
     var resultURL = window.AF_SMART_SCRIPT.generateOneLinkURL({
     oneLinkURL: oneLinkURL,
     afParameters: {
@@ -105,14 +114,18 @@ window.history.pushState({}, '', url);
         afSub1: afSub1,
         afSub2: afSub2,
         afSub3: afSub3,
-        afSub4: afSub4,
-        afCustom: [
-            referrer
-        ]
+        afSub4: afSub4 
+         
     }
     });
     if(resultURL) {
+    
         document.getElementById('outgingurl').innerHTML = AF_SMART_SCRIPT_RESULT;
+        setTimeout(() => {
+                window.AF_SMART_SCRIPT.fireImpressionsLink();
+                fetch(resultURl.clickURL)
+                console.log("Impression fired");
+            }, 1000);
     }
 
 
