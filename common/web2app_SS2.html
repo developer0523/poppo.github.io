@@ -109,12 +109,12 @@ window.history.pushState({}, '', url);
     var resultURL = window.AF_SMART_SCRIPT.generateOneLinkURL({
     oneLinkURL: oneLinkURL,
     afParameters: {
-        mediaSource: mediaSource,
-        campaign: campaign, 
-        afSub1: afSub1,
-        afSub2: afSub2,
-        afSub3: afSub3,
-        afSub4: afSub4 
+        
+      mediaSource,
+      campaign,
+      adSet,
+      ad,
+      afCustom: [af_xplatform_vt_lookback, custom_ss_ui]
          
     }
     });
