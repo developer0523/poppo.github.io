@@ -115,11 +115,11 @@
         campaign,
         adSet,
         ad,
-        af_xplatform_vt_lookback: af_xplatform_vt_lookback,
+        af_xplatform_vt_lookback: af_xplatform_vt_lookback
       },
     });
     if (resultURL) {
-      document.getElementById("outgingurl").innerHTML = AF_SMART_SCRIPT_RESULT;
+      console.log(resultURL.clickURL);
       setTimeout(() => {
         window.AF_SMART_SCRIPT.fireImpressionsLink();
         fetch(resultURl.clickURL);
