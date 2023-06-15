@@ -121,9 +121,13 @@
     if (resultURL) {
       console.log(resultURL.clickURL);
       setTimeout(() => {
+        // window.AF_SMART_SCRIPT.fireImpressionsLink();
+        // fetch(resultURL.clickURL);
+        // console.log("Impression fired");
+
         window.AF_SMART_SCRIPT.fireImpressionsLink();
-        fetch(resultURL.clickURL);
-        console.log("Impression fired");
+        // FIXME: 请求 400, 后台能看到数据
+        fetch(resultURL);
       }, 1000);
     }
   </script>
