@@ -67,7 +67,7 @@
     };
     var crossPlatformFlag = { paramKey: "af_xplatform", keys: [], defaultValue: "true" }
     //Here is a must
-     
+    var afSub1 = { keys: ["af_sub1"], defaultValue: "lovelyday" };
     var resultURL = window.AF_SMART_SCRIPT.generateOneLinkURL({
       oneLinkURL: oneLinkURL,
       afParameters: {
@@ -77,7 +77,7 @@
         ad,
         af_xplatform_vt_lookback: af_xplatform_vt_lookback,
         afCustom: [
-          crossPlatformFlag
+          crossPlatformFlag, afSub1
         ] 
       },
     });
@@ -89,6 +89,7 @@
         // console.log("Impression fired");
 
         window.AF_SMART_SCRIPT.fireImpressionsLink();
+        console.log("Impression fired");
         // FIXME: 请求 400, 后台能看到数据
        }, 1000);
      }
