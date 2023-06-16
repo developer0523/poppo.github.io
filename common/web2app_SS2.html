@@ -65,49 +65,9 @@
       paramKey: "af_xplatform_vt_lookback",
       defaultValue: "12h",
     };
-
-    // var mediaSource = {
-    //     keys: ["utm_source"],
-    //     defaultValue: "ua_misc"
-    // };
-    // var campaign = {
-    //     keys: ["utm_campaign"],
-    //     defaultValue: "ua_misc"
-    // };
-    // var adSet = {
-    //     keys: ["utm_content"],
-    //     defaultValue: "ua_misc"
-    // };
-    // var ad = {
-    //     keys: ["utm_term"],
-    //     defaultValue: "ua_misc"
-    // };
-    // var afSub5 = {
-    //     keys: ["fbclid", "gclid", "msclkid", "afsub5", "twclid"]
-    // };
-    // var afSub1 = {
-    //     keys: ["z_afsub1"],
-    //     defaultValue: "mysub1"
-    // };
-
-    // var afSub2 = {
-    //     keys: ["y_afsub2"],
-    //     defaultValue: "mysub2"
-    // };
-
-    // var afSub3 = {
-    //     keys: ["x_afsub3"],
-    //     defaultValue: "mysub3"
-    // };
-    // var afSub4 = {
-    //     keys: ["w_afsub4"],
-    //     defaultValue: "mysub4"
-    // };
-
-    // const af_xplatform_vt_lookback = {
-    //     paramKey: 'af_xplatform_vt_lookback',
-    //     defaultValue: '12h'
-    //   };
+    var crossPlatformFlag = { paramKey: "af_xplatform", keys: [], defaultValue: "true" }
+    //Here is a must
+     
     var resultURL = window.AF_SMART_SCRIPT.generateOneLinkURL({
       oneLinkURL: oneLinkURL,
       afParameters: {
@@ -127,9 +87,7 @@
 
         window.AF_SMART_SCRIPT.fireImpressionsLink();
         // FIXME: 请求 400, 后台能看到数据
-        // fetch(resultURL);
-      }, 1000);
-      // fetch('https://google.com');
-    }
+       }, 1000);
+     }
   </script>
 </html>
