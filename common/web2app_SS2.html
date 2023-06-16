@@ -53,7 +53,7 @@
 
   <!-- load script for onelink smart script -->
   <script src="../layui/layui.all.js" charset="utf-8"></script>
-  <script src="../js/onelink-smart-script-latest.js" charset="utf-8"></script>
+  <script src="../js/onelink-smart-script-2.6.0.js" charset="utf-8"></script>
 
   <script type="text/javascript">
     var oneLinkURL = "https://rosea.onelink.me/ovWU";
@@ -83,15 +83,10 @@
     });
     if (resultURL) {
       console.log(resultURL.clickURL);
-      setTimeout(() => {
-        // window.AF_SMART_SCRIPT.fireImpressionsLink();
-        // fetch(resultURL.clickURL);
-        // console.log("Impression fired");
-
+      setTimeout(() => { 
         window.AF_SMART_SCRIPT.fireImpressionsLink();
         console.log("Impression fired");
-        // FIXME: 请求 400, 后台能看到数据
-       }, 1000);
+        }, 1000);
      }
   </script>
 </html>
